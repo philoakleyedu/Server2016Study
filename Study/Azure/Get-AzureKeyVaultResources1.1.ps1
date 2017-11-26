@@ -11,7 +11,7 @@ ForEach ($Subscription in $Subscriptions) {
         if ($KeyVaults -ne $null ) {
             $Secrets = Get-AzureKeyVaultSecret -VaultName $KeyVaults.Name 
             ForEach ($Secret in $Secrets) {
-                Backup-AzureKeyVaultSecret -VaultName $KeyVaults.Name -Name $Secret.Name -OutputFile $BackupPath -Force
+                Backup-AzureKeyVaultSecret -VaultName $KeyVaults.Name -Name $Secret.Name -OutputFile $BackupPath
             }
         }
     }
