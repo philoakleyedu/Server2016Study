@@ -2,9 +2,9 @@
 Login-AzureRmAccount
 
 $BackupPath = (get-location).Drive.Name + ":\Backup.blob'"
-$Subs = Get-AzureRmSubscription
-ForEach ($Sub in $Subs) {
-    Set-AzureRmContext -SubscriptionName $Sub.Name
+$Subscriptions = Get-AzureRmSubscription
+ForEach ($Subscription in $Subscriptions) {
+    Set-AzureRmContext -SubscriptionName $Subscription.Name
     $ResourceGroups = Get-AzureRmResourceGroup   
     foreach ($ResourceGroup in $ResourceGroups) {
         $KeyVaults = Get-AzureRmResource -ResourceGroupName $ResourceGroup.ResourceGroupName -ResourceType Microsoft.KeyVault/vaults
