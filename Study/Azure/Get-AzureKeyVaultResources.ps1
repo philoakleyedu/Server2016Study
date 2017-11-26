@@ -4,6 +4,9 @@
 #$CSVPath = (get-location).Drive.Name + ":\Azure Resources.csv"
 
 Login-AzureRmAccount
+
+$AllVaults = @()
+
 $Subs = Get-AzureRmSubscription
 ForEach ($Sub in $Subs) {
     Set-AzureRmContext -SubscriptionName $Sub.Name
@@ -16,4 +19,4 @@ ForEach ($Sub in $Subs) {
     }
 }
 foreach ($Vault in $AllVaults) {
-Write-Host $Vault.Name }
+Write-Host $Vault  }
