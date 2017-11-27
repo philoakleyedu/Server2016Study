@@ -33,7 +33,7 @@ ForEach ($Subscription in $Subscriptions) {
         # --- Get all KeyVaults for the Resource Group
         $KeyVaults = Get-AzureRmResource -ResourceGroupName $ResourceGroup.ResourceGroupName -ResourceType Microsoft.KeyVault/vaults
         if ($KeyVaults -ne $null ) {
-            # --- Retrieve all Secrets from vault
+            # --- Retrieve all Secrets from KeyVault
             $Secrets = Get-AzureKeyVaultSecret -VaultName $KeyVaults.Name 
             ForEach ($Secret in $Secrets) {
                 $SecretName = $Secret.Name
