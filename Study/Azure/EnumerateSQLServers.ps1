@@ -19,45 +19,7 @@ foreach ($Sub in $Subs) {
     $SQLServers = Get-AzureRMSqlServer
 
     # --- Break Down SQL Server Names for use in Hastable\JSON
-    foreach ($Server in $SQLServers) {
-        Switch -Wildcard ($Server.ServerName) {
-            "cds-beta*" {
-                $Prog = "CDS"             
-                $AzureEnv = "BETA" 
-            }
-            "cds-dev*" {
-                $Prog = "CDS" 
-                $AzureEnv = "DEV"
-            }
-            "cds-sit*" {
-                $Prog = "CDS"
-                $AzureEnv = "SIT"
-            }
-            "cds-test*" {
-                $Prog = "CDS"
-                $AzureEnv = "TEST"
-            }
-            "das-demo*" {
-                $Prog = "DAS"
-                $AzureEnv = "DEMO"
-            }
-            "das-at*" {
-                $Prog = "DAS"
-                $AzureEnv = "AT"
-            }
-            "das-test*" {
-                $Prog = "DAS"
-                $AzureEnv = "TEST"
-            }
-            "das-test2*" {
-                $Prog = "DAS"
-                $AzureEnv = "TEST2"
-            }
-            default {
-                $Prog = "Unknown"
-                $AzureEnv = "Unknown"
-            }
-        }
+
         
         # ---Format to JSON 
 
