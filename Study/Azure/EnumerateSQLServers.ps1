@@ -60,4 +60,4 @@ foreach ($Sub in $Subs) {
 
 
 $Servers = Get-Content -Path $JSONPath | convertfrom-Json
-write-host $Servers
+$Servers
