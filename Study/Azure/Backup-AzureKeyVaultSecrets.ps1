@@ -2,11 +2,11 @@
 .SYNOPSIS
 Backs up All KeyVault Secrets
 .DESCRIPTION
-Backs up All KeyVault Secrets to specified file account used to execute script must have relevant principles set
+Backs up All KeyVault Secrets to specified file  
 .PARAMETER BackupPath
 The location of the Backup Files. 
 .EXAMPLE
-.\Backup-AzureKeyVaultSecrets.ps1 -Location c:\temp\Backup
+.\Backup-AzureKeyVaultSecrets.ps1 -Location c:\temp\Backup\
 #>
 
 Param (
@@ -20,7 +20,7 @@ Import-Module (Resolve-Path -Path $PSScriptRoot\..\Modules\Helpers.psm1).Path
 
 # --- Set backup Ptah if not passed as a paramater
 If ($BackupPath -eq $null){
-    $BackupPath = (get-location).Drive.Name + ":\temp\Backup"
+    $BackupPath = (get-location).Drive.Name + ":\temp\Backup\"
 }
 
 # --- Enumerate Subscriptions
